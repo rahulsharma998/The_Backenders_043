@@ -5,6 +5,9 @@ const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const productRoutes = require('./routes/productRoutes');
+const medicineRoutes = require('./routes/medicineRoutes');
+
+
 
 dotenv.config();
 connectDB();
@@ -14,6 +17,7 @@ app.use(bodyParser.json())
 app.use('/api/users', userRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/medicines', medicineRoutes);
 
 app.use((err, req, res, next) => {
     res.status(500).json({ message: err.message });
