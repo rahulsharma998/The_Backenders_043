@@ -6,6 +6,7 @@ const userRoutes = require('./routes/userRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const productRoutes = require('./routes/productRoutes');
 const medicineRoutes = require('./routes/medicineRoutes');
+const  cors = require('cors');
 
 
 
@@ -13,6 +14,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json())
 app.use('/api/users', userRoutes);
 app.use('/api/cart', cartRoutes);
