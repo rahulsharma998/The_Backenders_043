@@ -1,7 +1,6 @@
 const User = require('../models/User');
 const { generateToken } = require('../utils/jwtUtils');
 
-// Register user
 const registerUser = async (req, res) => {
     const { name, email, password } = req.body;
     try {
@@ -19,8 +18,6 @@ const registerUser = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
-
-// Login user
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
     try {
